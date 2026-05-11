@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import TLAluminiumFabrication from '../assets/tl.png';
 import EventBuddy from '../assets/eventbuddy.png';
 import Lakshayaa from '../assets/lakshayaa.png';

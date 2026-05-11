@@ -3,8 +3,6 @@ import {
   Code2, 
   MonitorSmartphone, 
   ShoppingCart, 
-  CreditCard, 
-  Cloud, 
   Search 
 } from 'lucide-react';
 
