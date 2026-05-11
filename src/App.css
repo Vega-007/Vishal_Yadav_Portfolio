@@ -1,12 +1,12 @@
 .counter {
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 4px 10px;
   border-radius: 5px;
   color: var(--accent);
   background: var(--accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 
   &:hover {
     border-color: var(--accent-border);
@@ -28,9 +28,13 @@
   }
 
   .base {
-    width: 170px;
+    width: 140px; 
     position: relative;
     z-index: 0;
+    /* Responsive tweak: slightly smaller on mobile */
+    @media (max-width: 640px) {
+      width: 110px;
+    }
   }
 
   .framework,
@@ -40,33 +44,42 @@
 
   .framework {
     z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
+    top: 28px;
+    height: 22px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.1);
+    
+    @media (max-width: 640px) {
+      top: 22px;
+      height: 18px;
+      scale: 0.9;
+    }
   }
 
   .vite {
     z-index: 0;
-    top: 107px;
-    height: 26px;
+    top: 85px;
+    height: 20px;
     width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
+
+    @media (max-width: 640px) {
+      top: 65px;
+      height: 16px;
+    }
   }
 }
 
 #center {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   place-content: center;
   place-items: center;
   flex-grow: 1;
 
   @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
+    padding: 24px 16px 20px;
+    gap: 16px;
   }
 }
 
@@ -77,16 +90,16 @@
 
   & > div {
     flex: 1 1 0;
-    padding: 32px;
+    padding: 24px;
     @media (max-width: 1024px) {
-      padding: 24px 20px;
+      padding: 20px 16px;
     }
   }
 
   .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
+    margin-bottom: 12px;
+    width: 20px;
+    height: 20px;
   }
 
   @media (max-width: 1024px) {
@@ -109,19 +122,19 @@
   padding: 0;
   display: flex;
   gap: 8px;
-  margin: 32px 0 0;
+  margin: 24px 0 0;
 
   .logo {
-    height: 18px;
+    height: 16px;
   }
 
   a {
     color: var(--text-h);
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 6px;
     background: var(--social-bg);
     display: flex;
-    padding: 6px 12px;
+    padding: 5px 10px;
     align-items: center;
     gap: 8px;
     text-decoration: none;
@@ -131,13 +144,13 @@
       box-shadow: var(--shadow);
     }
     .button-icon {
-      height: 18px;
-      width: 18px;
+      height: 16px;
+      width: 16px;
     }
   }
 
   @media (max-width: 1024px) {
-    margin-top: 20px;
+    margin-top: 16px;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -154,10 +167,10 @@
 }
 
 #spacer {
-  height: 88px;
+  height: 64px;
   border-top: 1px solid var(--border);
   @media (max-width: 1024px) {
-    height: 48px;
+    height: 40px;
   }
 }
 

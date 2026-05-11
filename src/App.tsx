@@ -8,19 +8,20 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Start in Dark Mode
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    // Check system preference on load
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
+    // Force the dark class on the very first load
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    
+    // Toggle the 'dark' class on the HTML element for Tailwind's dark: prefix
+    if (newDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -28,16 +29,29 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden selection:bg-gray-900 selection:text-white dark:selection:bg-white dark:selection:text-black flex flex-col relative">
+    <div className={`min-h-screen w-full overflow-x-hidden flex flex-col relative transition-colors duration-500 
+      ${isDarkMode 
+        ? 'bg-[#050505] selection:bg-white selection:text-black' 
+        : 'bg-white selection:bg-black selection:text-white'
+      }`}
+    >
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <TechStack />
-      <Projects />
-      <Experience />
-      <Contact />
       
-      <footer className="py-12 px-6 md:px-12 border-t border-gray-200 dark:border-white/5 flex items-center justify-center text-sm sm:text-base tracking-[0.2em] font-semibold text-gray-500 dark:text-[#525252] uppercase mt-20 transition-colors duration-300">
+      <main className="flex-grow">
+        <Hero />
+        <About />
+        <TechStack />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      
+      <footer className={`py-6 md:py-10 px-6 border-t flex flex-col sm:flex-row items-center justify-center gap-4 text-[10px] md:text-xs tracking-[0.2em] font-semibold uppercase mt-12 transition-colors duration-300 
+        ${isDarkMode 
+          ? 'border-white/5 text-[#525252]' 
+          : 'border-gray-200 text-gray-400'
+        }`}
+      >
         <div>© {new Date().getFullYear()} VISHAL YADAV</div>
       </footer>
     </div>
