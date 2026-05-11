@@ -18,9 +18,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="flex items-center gap-4 text-xs sm:text-sm font-semibold tracking-widest text-gray-500 uppercase mb-8"
-      >
-        {/* bro i */}
-      </motion.div>
+      />
 
       <motion.h1
         initial={{ opacity: 0, y: 50, filter: 'blur(15px)' }}

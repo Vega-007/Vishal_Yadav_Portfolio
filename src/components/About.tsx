@@ -1,6 +1,6 @@
 import { motion, animate, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import profile from '../assets/vega.jpg';
+import profile from '../assets/profile-pic.jpg';
 
 function AnimatedCounter({ from, to, duration = 2 }: { from: number, to: number, duration?: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
@@ -107,7 +107,7 @@ export default function About() {
                 <div className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Commitment</div>
               </div>
               <div className="hidden md:block">
-                <div className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-2 transition-colors duration-300">&lt;<AnimatedCounter from={999} to={200} duration={2} /><span className="text-2xl text-gray-500">ms</span></div>
+                <div className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-2 transition-colors duration-300">{"<"}<AnimatedCounter from={999} to={200} duration={2} /><span className="text-2xl text-gray-500">ms</span></div>
                 <div className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Latency</div>
               </div>
             </motion.div>
