@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    /* Scaled down pt-32 to pt-24 and lg:px-32 to lg:px-24 */
     <section className="min-h-[90vh] flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 relative pt-24 transition-colors duration-300 overflow-hidden w-full">
       
-      {/* Subtle Background Glow - Scaled down for 100% zoom */}
+      {/* Subtle Background Glow */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -24,9 +23,6 @@ export default function Hero() {
         initial={{ opacity: 0, y: 50, filter: 'blur(15px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        /* REDUCED FONT SIZE: 
-           From 9vw/10vw/8vw to fluid sizes that don't break the layout.
-        */
         className="text-[12vw] sm:text-[9vw] lg:text-[7.5vw] leading-[0.85] font-black tracking-tighter text-gray-900 dark:text-white mb-12 uppercase max-w-full overflow-hidden hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 transition-all duration-500 cursor-default"
       >
         VISHAL YADAV
@@ -37,7 +33,6 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          /* Reduced text size from text-2xl to text-xl for standard desktop */
           className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-[#a1a1aa] max-w-xl font-normal leading-relaxed transition-colors duration-300"
         >
           <span className="font-bold text-gray-900 dark:text-white">Builder. Developer. Problem Solver.</span><br className="hidden sm:block" />
@@ -50,16 +45,20 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex-shrink-0"
         >
+          {/* REFINED BUTTON: 
+              - px-5 py-2.5 on mobile, px-7 py-3 on desktop 
+              - text-xs to text-sm 
+              - rounded-full for a sleeker look
+          */}
           <a 
             href="#projects" 
-            className="px-6 py-3 md:px-8 md:py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center justify-center text-base md:text-lg whitespace-nowrap shadow-lg"
+            className="px-5 py-2.5 md:px-7 md:py-3 bg-black dark:bg-white text-white dark:text-black text-xs md:text-sm font-bold rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 flex items-center justify-center whitespace-nowrap shadow-md"
           >
             View Projects
           </a>
         </motion.div>
       </div>
       
-      {/* Scroll indicator - Scaled down for mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
@@ -73,7 +72,6 @@ export default function Hero() {
             className="w-1 h-1 md:w-1.5 md:h-1.5 bg-gray-500 rounded-full" 
           />
         </div>
-        <span className="text-[10px] font-semibold tracking-widest text-gray-500 uppercase"></span>
       </motion.div>
     </section>
   );
