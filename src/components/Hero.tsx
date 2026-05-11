@@ -19,7 +19,7 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="flex items-center gap-4 text-xs sm:text-sm font-semibold tracking-widest text-gray-500 uppercase mb-8"
       >
-        {/* <span className="w-12 h-[1px] bg-gray-500" /> CHENNAI, INDIA */}
+        {/* bro i */}
       </motion.div>
 
       <motion.h1
